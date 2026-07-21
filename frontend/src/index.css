@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-space-950: #04060f;
+  --color-space-900: #070b1a;
+  --color-space-850: #0a1024;
+  --color-space-800: #0d1530;
+  --color-space-700: #131c3d;
+  --color-space-600: #1c2850;
+
+  --color-cyan-glow: #3fd4ff;
+  --color-violet-glow: #8b6cff;
+  --color-azure: #4f7cff;
+
+  --color-mist-100: #eef1fb;
+  --color-mist-300: #b7c0e0;
+  --color-mist-500: #7b87ac;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-space-950);
+  color: var(--color-mist-100);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-cyan-glow);
+  color: var(--color-space-950);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-space-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-space-600);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-azure);
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-cyan-glow), var(--color-violet-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -8px rgba(63, 212, 255, 0.45);
+}
+
+.glow-violet {
+  box-shadow: 0 0 40px -8px rgba(139, 108, 255, 0.45);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
